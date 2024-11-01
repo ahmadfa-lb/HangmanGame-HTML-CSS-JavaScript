@@ -12,6 +12,11 @@ const maxGuesses = 6;
 const resetGame = () => {
     correctLetters = [];
     wrongGuessCount = 0;
+    hangmanImage.src = `images/hangman-${wrongGuessCount}.svg`;
+    guessesText.innerHTML = `${wrongGuessCount} / ${maxGuesses}`;
+    keyboardDiv.querySelectorAll("button").forEach(btn => btn.disabled = false);
+    wordDisplay.innerHTML = currentWord.split("").map(() => `<li class="letter"></li>`).join("");
+    gameModal.classList.remove("show");
 }
 
 const getRandomWord = () =>{
@@ -19,14 +24,12 @@ const getRandomWord = () =>{
     currentWord = word;
     document.querySelector(".hint-text b").innerText = hint;
     resetGame();
-    wordDisplay.innerHTML = word.split("").map(() => `<li class="letter"></li>`).join("");
 }
 
 const gameOver = (isVictory) => {
     setTimeout(() =>{
         const modalText = isVictory ? `You found the word:` : `The correct word was:`;
         gameModal.querySelector("img").src = `images/${isVictory ? 'victory' : 'lost'}.gif`;
-        gameModal.querySelector("h4").innerText = `${isVictory ? 'Congrats!' : 'Game Over!'}`;
         gameModal.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
         gameModal.classList.add("show");
     }, 300);
