@@ -166,8 +166,24 @@ body {
     max-width: 200px;
   }
 
-  .decorated-font{
+  .game-box {
+    width: 100%;
+  }
+
+  .game-box .keyboard {
+    margin-top: 25px;
+  }
+
+  .decorated-font {
     font-size: 1.5rem;
-    margin:2rem 0;
+    margin: 2rem 0;
+  }
+
+  .game-box .hint-text {
+    height: 50px;
+  }
+
+  .game-box .guesses-text {
+    padding-top: 15px;
   }
 }
