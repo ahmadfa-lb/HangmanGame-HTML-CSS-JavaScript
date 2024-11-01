@@ -21,7 +21,8 @@ body {
   width: 850px;
   background: #ffeac5;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
   gap: 70px;
   padding: 60px 40px;
   border-radius: 10px;
@@ -39,13 +40,13 @@ body {
   color: #4a4a4a;
   letter-spacing: 2px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(to right, #ffd700, #ff8c00);
+  background: linear-gradient(to right, #4a4003, #ff8c00);
   /* -webkit-background-clip: text; */
   background-clip: text;
   color: transparent;
   font-style: italic;
   text-transform: uppercase;
-  margin-bottom: 4rem;
+  /* margin-bottom: 2rem; */
 }
 
 .word-display {
